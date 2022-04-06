@@ -248,13 +248,13 @@
 {
     .tabbrowser-tab[usercontextid] .tab-background
     {
-        background-color: color-mix(in srgb, var(--identity-icon-color) 25%, transparent);
+        background-color: color-mix(in srgb, var(--identity-icon-color) 25%, var(--toolbar-bgcolor));
     }
 
     .tabbrowser-tab[usercontextid] .tab-background::before,
     .tabbrowser-tab[usercontextid] .tab-background::after
     {
-        fill: color-mix(in srgb, var(--identity-icon-color) 25%, transparent);
+        fill: color-mix(in srgb, var(--identity-icon-color) 25%, var(--toolbar-bgcolor));
     }
     
     .tabbrowser-tab[usercontextid]::before,
@@ -263,6 +263,13 @@
     .tabbrowser-tab[usercontextid] + #tabs-newtab-button::before
     {
         opacity: 0 !important;
+    }
+
+    .tabbrowser-tab[usercontextid]:not([visuallyselected]):not(:hover) .tab-background::before {
+        background-image: url("special/Chrome/Chrome_left_corners_of_tabs_36_no_bottom.svg") !important;
+    }
+    .tabbrowser-tab[usercontextid]:not([visuallyselected]):not(:hover) .tab-background::after {
+        background-image: url("special/Chrome/Chrome_right_corners_of_tabs_36_no_bottom.svg") !important;
     }
 }
 
@@ -449,6 +456,14 @@
     }
 }
 
+@supports -moz-bool-pref("Style.Drag-Space-Above-Tabs-All-States-Enabled-Mini")
+{
+    :root
+    {
+        --drag-space-above-tabs: 4px;
+    }
+}
+
 :root[sizemode="normal"],
 :root:not([tabsintitlebar]),
 #toolbar-menubar:not([autohide][inactive]) + #TabsToolbar
@@ -488,8 +503,8 @@ spacer[part="overflow-end-indicator"]
 {
     color: inherit !important;
     --toolbarbutton-icon-fill: currentColor !important;
-    --toolbarbutton-hover-background: color-mix(in srgb, currentColor 10%, transparent) !important;
-    --toolbarbutton-active-background: color-mix(in srgb, currentColor 20%, transparent) !important;
+    --toolbarbutton-hover-background: color-mix(in srgb, currentColor 10%, var(--toolbar-bgcolor)) !important;
+    --toolbarbutton-active-background: color-mix(in srgb, currentColor 20%, var(--toolbar-bgcolor)) !important;
 }
 
 /* ---------------------------------------- Tabs ---------------------------------------- */
@@ -536,8 +551,9 @@ spacer[part="overflow-end-indicator"]
 
 .tab-close-button
 {
-    width: 24px !important;
-    padding: 7px !important;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 5px !important;
     border-radius: 50% !important;
 }
 
