@@ -248,13 +248,13 @@
 {
     .tabbrowser-tab[usercontextid] .tab-background
     {
-        background-color: color-mix(in srgb, var(--identity-icon-color) 25%, var(--toolbar-bgcolor));
+        background-color: color-mix(in srgb, var(--identity-icon-color) 25%, transparent);
     }
 
     .tabbrowser-tab[usercontextid] .tab-background::before,
     .tabbrowser-tab[usercontextid] .tab-background::after
     {
-        fill: color-mix(in srgb, var(--identity-icon-color) 25%, var(--toolbar-bgcolor));
+        fill: color-mix(in srgb, var(--identity-icon-color) 25%, transparent);
     }
     
     .tabbrowser-tab[usercontextid]::before,
@@ -506,8 +506,8 @@ spacer[part="overflow-end-indicator"]
 {
     color: inherit !important;
     --toolbarbutton-icon-fill: currentColor !important;
-    --toolbarbutton-hover-background: color-mix(in srgb, currentColor 10%, var(--toolbar-bgcolor)) !important;
-    --toolbarbutton-active-background: color-mix(in srgb, currentColor 20%, var(--toolbar-bgcolor)) !important;
+    --toolbarbutton-hover-background: color-mix(in srgb, currentColor 10%, transparent) !important;
+    --toolbarbutton-active-background: color-mix(in srgb, currentColor 20%, transparent) !important;
 }
 
 /* ---------------------------------------- Tabs ---------------------------------------- */
