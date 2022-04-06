@@ -266,10 +266,10 @@
     }
 
     .tabbrowser-tab[usercontextid]:not([visuallyselected]):not(:hover) .tab-background::before {
-        background-image: url("special/Chrome/Chrome_left_corners_of_tabs_36_no_bottom.svg") !important;
+        background-image: url("special/Chrome/Chrome_left_corners_of_tabs_36_no_bottom.svg");
     }
     .tabbrowser-tab[usercontextid]:not([visuallyselected]):not(:hover) .tab-background::after {
-        background-image: url("special/Chrome/Chrome_right_corners_of_tabs_36_no_bottom.svg") !important;
+        background-image: url("special/Chrome/Chrome_right_corners_of_tabs_36_no_bottom.svg");
     }
 }
 
