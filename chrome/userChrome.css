@@ -264,7 +264,10 @@
     {
         opacity: 0 !important;
     }
+}
 
+@supports -moz-bool-pref("Style.Additional-Container-Indicator") and -moz-bool-pref("Style.Chrome")
+{
     .tabbrowser-tab[usercontextid]:not([visuallyselected]):not(:hover) .tab-background::before {
         background-image: url("special/Chrome/Chrome_left_corners_of_tabs_36_no_bottom.svg");
     }
